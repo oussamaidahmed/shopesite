@@ -8,7 +8,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 const Navbar = () => {
   return (
     <>
-      <div className="w-full h-20 bg-white fixed z-50 " >
+      <div className="w-full h-20 bg-white fixed z-50  " >
         <div className="container mx-auto px-4 h-full">
           <div className="flex justify-between items-center h-full">
             <Image alt="logo" src={Logo} />

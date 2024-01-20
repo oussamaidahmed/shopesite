@@ -2,7 +2,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>shop page</div>
+    <div className=' relative z-50 top-20'>shop page</div>
   )
 }
 
