@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Logo from "../public/images/logo.png";
+import Logo from "../public/images/Logo.png";
 import Link from "next/link";
 import { PiHeart, PiUser, PiMagnifyingGlass } from "react-icons/pi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -8,7 +8,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 const Navbar = () => {
   return (
     <>
-      <div className="w-full h-20 bg-white sticky top-0">
+      <div className="w-full h-20 bg-white fixed z-50 " >
         <div className="container mx-auto px-4 h-full">
           <div className="flex justify-between items-center h-full">
             <Image alt="logo" src={Logo} />
