@@ -37,17 +37,17 @@ const Navbar = () => {
             <ul className="hidden md:flex gap-x-12 font-bold text-2xl text-black ">
               <li>
                 <Link href={"/"}>
-                  <PiHeart />
+                   <PiUser />
                 </Link>
               </li>
               <li>
                 <Link href={"/"}>
-                  <PiUser />
+                <PiMagnifyingGlass />
                 </Link>
               </li>
               <li>
                 <Link href={"/"}>
-                  <PiMagnifyingGlass />
+                <PiHeart />
                 </Link>
               </li>
               <li>
