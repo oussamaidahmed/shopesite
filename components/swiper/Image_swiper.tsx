@@ -15,7 +15,7 @@ function Image_swiper() {
 
       <div>
         <Swiper
-        
+          loop
           speed={2000}
           modules={[Autoplay]}
           autoplay={{ delay: 6000 }}
@@ -37,11 +37,12 @@ function Image_swiper() {
 
       {/* Living Images */}
 
-      <div> 
+      <div>
         <Swiper
+          loop
           speed={2000}
           modules={[Autoplay]}
-          autoplay={{ delay: 6500 }}
+          autoplay={{ delay: 6700 }}
           className="h-[550px] w-[450px] rounded-lg my-5"
         >
           <SwiperSlide>
@@ -67,9 +68,10 @@ function Image_swiper() {
 
       <div>
         <Swiper
-        speed={2000}
+          loop
+          speed={2000}
           modules={[Autoplay]}
-          autoplay={{ delay: 7000 }}
+          autoplay={{ delay: 7400 }}
           className="h-[550px] w-[450px] rounded-lg my-5"
         >
           <SwiperSlide>
