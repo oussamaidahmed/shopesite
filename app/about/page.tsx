@@ -1,5 +1,4 @@
 
-import Image_swiper from '@/components/swiper/Image_swiper'
 import React from 'react'
 
 const page = () => {

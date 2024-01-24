@@ -2,49 +2,106 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import Logo from "@/public/images/Logo.png";
-import Dining_1 from '@/public/images/swipeImages/Dining/Dining_1.png'
 import Image from "next/image";
-import { Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css/pagination";
+import Image_Import from "@/components/swiper/Image_Import";
+import "swiper/css/autoplay";
 
 function Image_swiper() {
   return (
-    <div>
-      <Swiper
-        slidesPerGroup={1}
-        className="relative z-50 top-20 w-[360px] h-[600px]  bg-slate-500"
-        pagination={true}
-        modules={[Pagination]}
-      >
-        <SwiperSlide>
-          <div>
-            <Image alt="logo" src={Logo} />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div>
-          <Image alt="logo" src={Dining_1} />
-          </div>
-        </SwiperSlide>
-      </Swiper>
-      <Swiper
-        slidesPerGroup={2}
-        className="relative z-50 top-20 w-[360px] h-[600px]  bg-slate-500"
-        pagination={true}
-        modules={[Pagination]}
-      >
-        <SwiperSlide>
-          <div>
-            <Image alt="logo" src={Logo} />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div>
-            <p>mokqhhdqd</p>
-          </div>
-        </SwiperSlide>
-      </Swiper>
+    <div className=" flex  font-semibold justify-around flex-wrap">
+      {/* Dining images */}
+
+      <div>
+        <Swiper
+        
+          speed={2000}
+          modules={[Autoplay]}
+          autoplay={{ delay: 6000 }}
+          className="  h-[550px] w-[450px] rounded-lg my-5"
+        >
+          <SwiperSlide>
+            <div>
+              <Image alt="logo" fill src={Image_Import.Dining.Dining_Image1} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image alt="logo" fill src={Image_Import.Dining.Dining_Image2} />
+            </div>
+          </SwiperSlide>
+        </Swiper>
+        <p>Dining</p>
+      </div>
+
+      {/* Living Images */}
+
+      <div> 
+        <Swiper
+          speed={2000}
+          modules={[Autoplay]}
+          autoplay={{ delay: 6500 }}
+          className="h-[550px] w-[450px] rounded-lg my-5"
+        >
+          <SwiperSlide>
+            <div>
+              <Image alt="logo" fill src={Image_Import.Living.Living_Image1} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image alt="logo" fill src={Image_Import.Living.Living_Image2} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image alt="logo" fill src={Image_Import.Living.Living_Image3} />
+            </div>
+          </SwiperSlide>
+        </Swiper>
+        <p>Living</p>
+      </div>
+
+      {/* Badroom images */}
+
+      <div>
+        <Swiper
+        speed={2000}
+          modules={[Autoplay]}
+          autoplay={{ delay: 7000 }}
+          className="h-[550px] w-[450px] rounded-lg my-5"
+        >
+          <SwiperSlide>
+            <div>
+              <Image
+                alt="logo"
+                fill
+                src={Image_Import.Bedroom.Bedroom_Image1}
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image
+                alt="logo"
+                fill
+                src={Image_Import.Bedroom.Bedroom_Image2}
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image
+                alt="logo"
+                fill
+                src={Image_Import.Bedroom.Bedroom_Image3}
+              />
+            </div>
+          </SwiperSlide>
+        </Swiper>
+        <p>Bedroom</p>
+      </div>
     </div>
   );
 }

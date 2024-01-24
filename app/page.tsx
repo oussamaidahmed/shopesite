@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
+import bgImage from "@/public/images/Home-bg.png";
 import Image_swiper from "@/components/swiper/Image_swiper";
-import bgImage from "@/public/images/Home-bg.png"
+
 const page = () => {
   return (
-    <div>
+    <div className=" relative  h-screen z-0">
       {/* background image  */}
 
       <Image alt="alt" src={bgImage} className=" relative  h-screen z-0" />
@@ -28,14 +29,18 @@ const page = () => {
           </button>
         </div>
       </div>
-      <div className=" justify-center text-center py-14 ">
-        <p className="font-black		 text-black text-xl ">Browse The Range</p>
+      <div className=" relative text-center my-14 mx-40 h-[695]">
+        <p className="font-bold text-black text-2xl tracking-widest ">Browse The Range</p>
         <p className=" font-medium text-normal text-[#666666]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
-        <div className=" flex">
+
+        {/* Image Swiper */}
+        
+        <div>
           <Image_swiper />
         </div>
+
       </div>
     </div>
   );
