@@ -19,7 +19,7 @@ function Image_swiper() {
           speed={2000}
           modules={[Autoplay]}
           autoplay={{ delay: 6000 }}
-          className="  h-[550px] w-[450px] rounded-lg my-5"
+          className="  h-[450px] w-[350px] rounded-lg my-5 md:w-[450px] md:h-[550px]"
         >
           <SwiperSlide>
             <div>
@@ -43,7 +43,7 @@ function Image_swiper() {
           speed={2000}
           modules={[Autoplay]}
           autoplay={{ delay: 6700 }}
-          className="h-[550px] w-[450px] rounded-lg my-5"
+          className="  h-[450px] w-[350px] rounded-lg my-5 md:w-[450px] md:h-[550px]"
         >
           <SwiperSlide>
             <div>
@@ -72,7 +72,7 @@ function Image_swiper() {
           speed={2000}
           modules={[Autoplay]}
           autoplay={{ delay: 7400 }}
-          className="h-[550px] w-[450px] rounded-lg my-5"
+          className="  h-[450px] w-[350px] rounded-lg my-5 md:w-[450px] md:h-[550px]"
         >
           <SwiperSlide>
             <div>

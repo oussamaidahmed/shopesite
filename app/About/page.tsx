@@ -1,11 +1,8 @@
-
 import React from 'react'
 
 const page = () => {
   return (
-    <div className=''>
-      
-    </div>
+    <div className=' relative z-0 top-20'>About page</div>
   )
 }
 

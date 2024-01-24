@@ -8,33 +8,33 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 const Navbar = () => {
   return (
     <>
-      <div className="w-full h-20 bg-white fixed z-50  " >
+      <div className="w-screen h-20 bg-white fixed z-50  " >
         <div className="container mx-auto px-4 h-full">
           <div className="flex justify-between items-center h-full">
             <Image alt="logo" src={Logo} />
-            <ul className="hidden md:flex gap-x-12 font-bold text-xl text-black text-">
+            <ul className="hidden md:flex gap-x-12 font-bold text-xl text-black  invisible lg:visible">
               <li>
                 <Link href="/">
                   <p>Home</p>
                 </Link>
               </li>
               <li>
-                <Link href="/shop">
+                <Link href="/Shop">
                   <p>shop</p>
                 </Link>
               </li>
               <li>
-                <Link href="/about">
+                <Link href="/About">
                   <p>About</p>
                 </Link>
               </li>
               <li>
-                <Link href="/contact">
+                <Link href="/Contacts">
                   <p>contacts</p>
                 </Link>
               </li>
             </ul>
-            <ul className="hidden md:flex gap-x-12 font-bold text-2xl text-black ">
+            <ul className="hidden md:flex gap-x-12 font-bold text-2xl text-black invisible lg:visible">
               <li>
                 <Link href={"/"}>
                    <PiUser />
