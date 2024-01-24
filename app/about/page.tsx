@@ -1,8 +1,12 @@
+
+import Image_swiper from '@/components/swiper/Image_swiper'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>about page</div>
+    <div className=''>
+      
+    </div>
   )
 }
 

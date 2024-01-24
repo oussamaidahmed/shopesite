@@ -1,7 +1,7 @@
 import React from "react";
-import bgImage from "../public/images/Home-bg.png";
 import Image from "next/image";
-
+import Image_swiper from "@/components/swiper/Image_swiper";
+import bgImage from "@/public/images/Home-bg.png"
 const page = () => {
   return (
     <div>
@@ -33,8 +33,8 @@ const page = () => {
         <p className=" font-medium text-normal text-[#666666]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
-        <div>
-          
+        <div className=" flex">
+          <Image_swiper />
         </div>
       </div>
     </div>
