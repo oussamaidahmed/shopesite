@@ -2,13 +2,16 @@ import React from "react";
 import Image from "next/image";
 import bgImage from "@/public/images/Home-bg.png";
 import Image_swiper from "@/components/swiper/Image_swiper";
+import ListItems from "@/components/Products/ListItems";
 
 const page = () => {
   return (
     <div className=" relative  h-screen z-0">
       {/* background image  */}
 
-      <Image alt="alt" src={bgImage} className=" relative  h-screen z-0 " />
+      <div className=" relative  h-screen z-0 ">
+        <Image alt="alt" src={bgImage} />
+      </div>
 
       {/* Group 114 */}
 
@@ -30,17 +33,28 @@ const page = () => {
         </div>
       </div>
       <div className=" relative text-center my-14 mx-40 h-[695]">
-        <p className="font-bold text-black text-2xl tracking-widest ">Browse The Range</p>
+        <p className="font-bold text-black text-2xl tracking-widest ">
+          Browse The Range
+        </p>
         <p className=" font-medium text-normal text-[#666666]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
 
         {/* Image Swiper */}
-        
+
         <div>
           <Image_swiper />
         </div>
+      </div>
+      {/* OUR PRODUCTS */}
 
+      <div className=" relative  justify-center text-center ">
+        <p className="font-bold text-black text-2xl tracking-widest ">
+          Our Products
+        </p>
+        <div>
+          <ListItems />
+        </div>
       </div>
     </div>
   );

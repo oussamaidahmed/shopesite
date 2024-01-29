@@ -1,12 +1,14 @@
-import React from 'react'
+import ListItems from "@/components/Products/ListItems";
+import React from "react";
 
 const page = () => {
   return (
-    <div className=' relative top-20'>
-  <p>shop page</p>
-      
+    <div className=" absolute  z-0 top-10 w-full  ">
+      <div className=" ">
+        <ListItems />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
