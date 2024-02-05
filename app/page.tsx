@@ -3,6 +3,7 @@ import Image from "next/image";
 import bgImage from "@/public/images/Home-bg.png";
 import Image_swiper from "@/components/swiper/Image_swiper";
 import ListItems from "@/components/Products/ListItems";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -25,11 +26,12 @@ const page = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             tellus, luctus nec ullamcorper mattis.
           </p>
-          <button className="px-14 py-5 bg-[#B88E2F]">
-            <p className="font-bold tracking-widest text-base text-white  ">
+          {/* Button */}
+          <div className=" mt-8 flex">
+            <Link className="px-14 py-5 bg-[#B88E2F] font-bold tracking-widest text-base text-white  " href={"/Shop"}>
               BUY NOW
-            </p>
-          </button>
+            </Link>
+          </div>
         </div>
       </div>
       <div className=" relative text-center my-14 mx-40 h-[695]">
