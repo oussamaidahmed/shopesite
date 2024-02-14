@@ -2,10 +2,10 @@ import React from "react";
 import Image from "next/image";
 import bgImage from "@/public/images/Home-bg.png";
 import Image_swiper from "@/components/swiper/Image_swiper";
-import ListItems from "@/components/Products/ListItems";
+import ProductList from "@/components/Products/ProductList";
 import Link from "next/link";
 
-const page = () => {
+const HomePage: React.FC = () => {
   return (
     <div className=" relative  h-screen z-0">
       {/* background image  */}
@@ -55,11 +55,11 @@ const page = () => {
           Our Products
         </p>
         <div>
-          <ListItems />
+          <ProductList />
         </div>
       </div>
     </div>
   );
 };
 
-export default page;
+export default HomePage;

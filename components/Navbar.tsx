@@ -4,7 +4,7 @@ import Logo from "../public/images/Logo.png";
 import Link from "next/link";
 import { PiHeart, PiUser, PiMagnifyingGlass } from "react-icons/pi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-const Navbar = () => {
+const Navbar= () => {
  
   return (
     <>
@@ -13,11 +13,6 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-full">
             <Image alt="logo" src={Logo} />
             <ul className="hidden md:flex gap-x-12 font-bold text-xl text-black  invisible lg:visible">
-              <li>
-                <Link href='/cart'>
-                <p>cart </p>
-                </Link>
-              </li>
               <li>
                 <Link href="/">
                   <p>Home</p>
@@ -56,7 +51,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link href={"/"}>
+                <Link href={"/cart"}>
                   <AiOutlineShoppingCart />
                 </Link>
               </li>
