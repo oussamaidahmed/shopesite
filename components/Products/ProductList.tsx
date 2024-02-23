@@ -2,9 +2,11 @@
 import React from "react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { PiHeartFill } from "react-icons/pi";
 
 interface Product {
+  category: any;
+  liked: boolean;
   title: string;
   image: string;
   description: string;
@@ -47,49 +49,71 @@ const ProductList: React.FC = () => {
       return prevCart;
     });
   };
+  const toggleLike = (productId: number) => {
+    setProducts((prevProducts) =>
+      prevProducts.map((product) =>
+        product.id === productId
+          ? {
+              ...product,
+              liked: !product.liked,
+            }
+          : product
+      )
+    );
+  };
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("https://fakestoreapi.com/products");
+      const response = await fetch("https://api.escuelajs.co/api/v1/products");
       const fetchedProducts = await response.json();
-      setProducts(fetchedProducts);
+      const productsWithLikes = fetchedProducts.map((product: Product) => ({
+        ...product,
+        liked: false,
+      }));
+      setProducts(productsWithLikes);
     } catch (error) {
       console.error("Error fetching products:", error);
     }
   };
 
   return (
-    <div className=" grid gap-4 md:gap-8 sm:gap-10 lg:gap-10 grid-cols-1 my-14 md:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:mx-40">
+    <div className=" grid  gap-4 md:gap-8 sm:gap-10 lg:gap-10 grid-cols-1 my-14 md:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:mx-40 justify-center">
       {products.map((product) => (
         <div
           key={product.id}
-          className="relative  h-[440px] w-[285px] bg-[#4974ca] rounded-3xl mx-auto"
+          className="relative border-2  h-[440px] w-[285px] bg-[#ffffff] rounded-3xl mx-auto"
           onMouseEnter={() => setHoveredProduct(product.id)}
           onMouseLeave={() => setHoveredProduct(null)}
         >
           <div className="flex justify-center items-center  ">
             <Image
-              alt="alt "
-              src={product.image}
+              alt={product.title}
+              src={product.category.image}
               width={285}
               height={301}
-              className=" object-contain h-[301px] w-[285px] "
+              className=" object-contain h-[300px] w-[285px] rounded-t-3xl mx-auto"
             />
           </div>
           <div className=" text-start font-semibold text-xl space-y-3 mx-2 ">
             <p>{product.name}</p>
-            <p className=" font-normal text-base text-[#898989] ">
+            <p className=" font-normal text-base text-[#898989] truncate">
               {product.title}
             </p>
-            <p>{product.price}</p>
+            <p className="text-[#3A3A3A] font-bold">Rp: {product.price}</p>
             {hoveredProduct === product.id && (
-              <div className=" absolute bg-black inset-0  top-[-12px] flex items-center justify-center rounded-3xl mx-auto  bg-opacity-60 ">
+              <div className=" absolute bg-black inset-0  top-[-12px] flex-col flex items-center justify-center rounded-3xl mx-auto  bg-opacity-55 ">
                 <button
-                  className="bg-blue-500  text-white px-4 py-2 rounded-md "
+                  className=" bg-white px-16 py-2 font-semibold text-[#B88E2F]  "
                   onClick={() => AddToCart(product)}
                 >
                   Add to Cart
                 </button>
+                <PiHeartFill
+                  onClick={() => toggleLike(product.id)}
+                  color={product.liked ? "red" : "white"}
+                  size={25}
+                  textAnchor="start"
+                ></PiHeartFill>
               </div>
             )}
           </div>
