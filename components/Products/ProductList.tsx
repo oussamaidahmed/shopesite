@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { PiHeartFill } from "react-icons/pi";
 
 interface Product {
-  category: any;
   liked: boolean;
   title: string;
   image: string;
@@ -64,7 +63,7 @@ const ProductList: React.FC = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("https://api.escuelajs.co/api/v1/products");
+      const response = await fetch("https://fakestoreapi.com/products");
       const fetchedProducts = await response.json();
       const productsWithLikes = fetchedProducts.map((product: Product) => ({
         ...product,
@@ -88,14 +87,14 @@ const ProductList: React.FC = () => {
           <div className="flex justify-center items-center  ">
             <Image
               alt={product.title}
-              src={product.category.image}
+              src={product.image}
               width={285}
               height={301}
               className=" object-contain h-[300px] w-[285px] rounded-t-3xl mx-auto"
             />
           </div>
           <div className=" text-start font-semibold text-xl space-y-3 mx-2 ">
-            <p>{product.name}</p>
+            <p>{  product.name}</p>
             <p className=" font-normal text-base text-[#898989] truncate">
               {product.title}
             </p>
