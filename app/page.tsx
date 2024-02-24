@@ -4,6 +4,7 @@ import bgImage from "@/public/images/Home-bg.png";
 import Image_swiper from "@/components/swiper/Image_swiper";
 import ProductList from "@/components/Products/ProductList";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 
 const HomePage: React.FC = () => {
   return (
@@ -58,6 +59,10 @@ const HomePage: React.FC = () => {
           <ProductList />
         </div>
       </div>
+
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

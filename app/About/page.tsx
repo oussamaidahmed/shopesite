@@ -2,6 +2,7 @@ import React from "react";
 import Bimage from "@/public/images/shopImage.png";
 import Logo from "@/public/images/MiniLogo.png";
 import Image from "next/image";
+import Footer from "@/components/Footer";
 
 const page = () => {
   return (
@@ -14,10 +15,11 @@ const page = () => {
           <p className=" font-semibold text-6xl ">About</p>
         </span>
       </div>
-{/* !!!!!!!!!!!!!!!!!!! */}
+      {/* !!!!!!!!!!!!!!!!!!! */}
 
-
-      <div></div>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };
