@@ -84,34 +84,33 @@ const CartPage: React.FC = () => {
 
       {/* !!!!!!!!!!!!!!!!!!!! */}
 
-      <div className=" flex  justify-around pt-14 select-none">
+      <div className=" flex  justify-around py-16 select-none">
         {cart.length === 0 ? (
-          <h1>Cart is empty.</h1>
+          <h1 className=" font-bold text-3xl relative ">Cart is empty</h1>
         ) : (
           <>
-            <table className=" text-center table-fixed w-[1200px] ">
+            <table className=" text-center table-fixed w-[1200px]  ">
               <thead className="  bg-[#F9F1E7] h-[55px]">
                 <th>{""}</th>
                 <th>Product</th>
                 <th>Price</th>
-                <th>Quantity</th>
+                <th>Quantity</th> 
                 <th>Subtotal</th>
               </thead>
-
               {cart.map((item: Product) => (
-                <tbody key={item.id} className="">
+                <tbody key={item.id} className=" relative ">
                   <tr>
-                    <td className=" flex justify-center items-center border-2 w-[90px] h-[120px] m-5">
+                    <td >
                       <Image
                         alt={item.title}
                         src={item.image}
                         width={70}
                         height={70}
-                        className=" rounded-t-3xl mx-auto"
+                        className=" flex  justify-center items-center border-2 w-[90px] h-[120px] m-5"
                       />
                     </td>
                     <td>
-                      <p className="text-[#898989] px-6 py-10 truncate">
+                      <p className="text-[#898989] truncate">
                         {item.title}
                       </p>
                     </td>
@@ -151,7 +150,7 @@ const CartPage: React.FC = () => {
                         Rs. {((item.quantity || 0) * item.price).toFixed(2)}
                       </p>
                     </td>
-                    <td>
+                    <td className=" relative right-8">
                       <MdDelete
                         size={23}
                         color="#B88E2F"

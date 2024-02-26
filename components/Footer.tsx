@@ -48,6 +48,21 @@ const Footer = () => {
           </h5>
         </div>
       </div>
+      <div>
+        <table>
+          <thead>
+            <th>Funiro.</th>
+            <th>Links</th>
+            <th>Help</th>
+            <th>Newsletter</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
