@@ -5,7 +5,7 @@ import { MdLocalShipping, MdSupportAgent } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <div className=" flex justify-around h-[270px] items-center bg-[#FAF3EA] w-screen px-7 ">
+    <div className=" flex justify-around h-[270px] items-center bg-[#FAF3EA] w-auto px-7 ">
       {/* -------------------- Quality Icon ------ -------------- */}
       <div className=" flex gap-2 ">
         <HiOutlineTrophy size={60} />
@@ -51,10 +51,12 @@ const Footer = () => {
       <div>
         <table>
           <thead>
-            <th>Funiro.</th>
-            <th>Links</th>
-            <th>Help</th>
-            <th>Newsletter</th>
+            <tr>
+              <th>Funiro.</th>
+              <th>Links</th>
+              <th>Help</th>
+              <th>Newsletter</th>
+            </tr>
           </thead>
           <tbody>
             <tr>

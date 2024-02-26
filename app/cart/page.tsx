@@ -91,16 +91,18 @@ const CartPage: React.FC = () => {
           <>
             <table className=" text-center table-fixed w-[1200px]  ">
               <thead className="  bg-[#F9F1E7] h-[55px]">
-                <th>{""}</th>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Quantity</th> 
-                <th>Subtotal</th>
+                <tr>
+                  <th>{""}</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Subtotal</th>
+                </tr>
               </thead>
               {cart.map((item: Product) => (
                 <tbody key={item.id} className=" relative ">
                   <tr>
-                    <td >
+                    <td>
                       <Image
                         alt={item.title}
                         src={item.image}
@@ -110,9 +112,7 @@ const CartPage: React.FC = () => {
                       />
                     </td>
                     <td>
-                      <p className="text-[#898989] truncate">
-                        {item.title}
-                      </p>
+                      <p className="text-[#898989] truncate">{item.title}</p>
                     </td>
                     <td>
                       <p className=" text-[#898989]">Rs. {item.price}</p>
@@ -165,13 +165,19 @@ const CartPage: React.FC = () => {
         )}
         <div className=" bg-[#F9F1E7] text-lg font-bold w-[390px] h-[393px] flex flex-col space-y-4 justify-evenly items-center">
           <h1 className=" text-3xl font-bold">Cart Totals</h1>
-          <div>
-            <h4>total Quantity: {totalQuantity}</h4>
-            <h4>total Price: {totalPrice.toFixed(2)}</h4>
+          <div className=" space-y-4">
+            <div className=" flex ">
+              total Quantity: <h1 className=" pl-5">{totalQuantity}</h1>
+            </div>
+            <div className=" flex ">
+              total Price: <h1 className=" pl-5 text-[#e6ae2e]">{totalPrice.toFixed(2)}</h1>{" "}
+            </div>
           </div>
           <div>
-            <button className=" px-5 py-2
-            3 border-2">
+            <button
+              className=" px-14 py-3
+            3 border-2 rounded-2xl border-stone-950"
+            >
               Check Out
             </button>
           </div>

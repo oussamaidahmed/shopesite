@@ -4,7 +4,7 @@ import Logo from "@/public/images/MiniLogo.png";
 
 export const CartHeader = () => {
   return (
-    <div className="relative justify-center h-[313px] w-screen   ">
+    <div className="relative justify-center h-[313px] w-full   ">
       <Image alt="alt" src={Bimage} fill />
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <Image alt="logo" src={Logo} width={77} height={77} />
