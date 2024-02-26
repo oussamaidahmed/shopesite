@@ -3,10 +3,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Bimage from "@/public/images/shopImage.png";
-import Logo from "@/public/images/MiniLogo.png";
 import Footer from "@/components/Footer";
 import { MdAdd, MdDelete, MdOutlineHorizontalRule } from "react-icons/md";
+import { CartHeader } from "@/components/header";
 
 interface Product {
   image: string;
@@ -79,95 +78,107 @@ const CartPage: React.FC = () => {
 
   return (
     <div className=" relative z-0 top-20">
-      <div className="relative justify-center h-[313px] w-screen   ">
-        <Image alt="alt" src={Bimage} fill />
-
-        <span className="absolute inset-0 flex flex-col items-center justify-center">
-          <Image alt="logo" src={Logo} width={77} height={77} />
-          <p className=" font-semibold text-6xl ">Cart</p>
-        </span>
-      </div>
+      <header>
+        <CartHeader />
+      </header>
 
       {/* !!!!!!!!!!!!!!!!!!!! */}
 
-      <div className=" flex-row">
-        {/* <div>
-          <h1>Shopping Cart</h1>
-          <p>total Quantity: {totalQuantity}</p>
-          <p>total Price: {totalPrice.toFixed(2)}</p>
-        </div> */}
+      <div className=" flex  justify-around pt-14 select-none">
+        {cart.length === 0 ? (
+          <h1>Cart is empty.</h1>
+        ) : (
+          <>
+            <table className=" text-center table-fixed w-[1200px] ">
+              <thead className="  bg-[#F9F1E7] h-[55px]">
+                <th>{""}</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+              </thead>
 
-        <table className=" flex-grow text-center">
-          <thead className="  bg-[#F9F1E7] w-[817px] h-[55px] ">
-            <th>{""}</th>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
-          </thead>
-          {cart.length === 0 ? (
-            <p>Cart is empty.</p>
-          ) : (
-            cart.map((item: Product) => (
-              <tbody key={item.id} className="">
-                <tr>
-                  <td>
-                    <Image
-                      alt={item.title}
-                      src={item.image}
-                      width={70}
-                      height={70}
-                      className=" rounded-t-3xl mx-auto"
-                    />
-                  </td>
-                  <td>
-                    <p className="text-[#898989]">{item.title}</p>
-                  </td>
-                  <td>
-                    <p className=" text-[#898989]">{item.price}</p>
-                  </td>
-                  <td >
-                    <div className="  flex gap-4 ">
-                      <MdOutlineHorizontalRule
-                       className=" outline-1 outline outline-offset-1"
-                       size={15}
-                        onClick={() =>
-                          updateQuantity(
-                            item.id,
-                            Math.max((quantityMap[item.id] || 0) - 1, 1)
-                          )
-                        }
+              {cart.map((item: Product) => (
+                <tbody key={item.id} className="">
+                  <tr>
+                    <td className=" flex justify-center items-center border-2 w-[90px] h-[120px] m-5">
+                      <Image
+                        alt={item.title}
+                        src={item.image}
+                        width={70}
+                        height={70}
+                        className=" rounded-t-3xl mx-auto"
                       />
-                      <p className=" p-3 border-2">{quantityMap[item.id] || 0}</p> {""}
-                      <MdAdd
-                        className=" outline-1 outline outline-offset-1"
-                        size={15}
-                        onClick={() =>
-                          updateQuantity(
-                            item.id,
-                            (quantityMap[item.id] || 0) + 1
-                          )
-                        }
+                    </td>
+                    <td>
+                      <p className="text-[#898989] px-6 py-10 truncate">
+                        {item.title}
+                      </p>
+                    </td>
+                    <td>
+                      <p className=" text-[#898989]">Rs. {item.price}</p>
+                    </td>
+                    <td>
+                      <div className="  flex gap-4  justify-center items-center ">
+                        <MdOutlineHorizontalRule
+                          className=" outline-1 outline outline-offset-0.5"
+                          size={15}
+                          onClick={() =>
+                            updateQuantity(
+                              item.id,
+                              Math.max((quantityMap[item.id] || 0) - 1, 1)
+                            )
+                          }
+                        />
+                        <p className=" p-2 outline outline-1 rounded ">
+                          {quantityMap[item.id] || 0}
+                        </p>
+                        {/* -----increase------- */}
+                        <MdAdd
+                          className=" outline-1 outline outline-offset-0.5"
+                          size={15}
+                          onClick={() =>
+                            updateQuantity(
+                              item.id,
+                              (quantityMap[item.id] || 0) + 1
+                            )
+                          }
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      <p className=" font-medium">
+                        Rs. {((item.quantity || 0) * item.price).toFixed(2)}
+                      </p>
+                    </td>
+                    <td>
+                      <MdDelete
+                        size={23}
+                        color="#B88E2F"
+                        onClick={() => removeItem(item.id)}
                       />
-                    </div>
-                  </td>
-                  <td>
-                    <p className=" font-medium">Rs: {((item.quantity || 0) * item.price).toFixed(2)}</p>
-                  </td>
-                  <td>
-                 <MdDelete 
-                 size={23}
-                 color="#B88E2F"
+                    </td>
+                  </tr>
+                </tbody>
+              ))}
+            </table>
+          </>
+        )}
+        <div className=" bg-[#F9F1E7] text-lg font-bold w-[390px] h-[393px] flex flex-col space-y-4 justify-evenly items-center">
+          <h1 className=" text-3xl font-bold">Cart Totals</h1>
+          <div>
+            <h4>total Quantity: {totalQuantity}</h4>
+            <h4>total Price: {totalPrice.toFixed(2)}</h4>
+          </div>
+          <div>
+            <button className=" px-5 py-2
+            3 border-2">
+              Check Out
+            </button>
+          </div>
+        </div>
 
-                 />
-                  </td>
-                </tr>
-              </tbody>
-            ))
-          )}
-        </table>
-
-        <button onClick={clearCart}>Clear Cart</button>
+        {/* <button onClick={clearCart}>Clear Cart</button> */}
       </div>
       <footer>
         <Footer />
