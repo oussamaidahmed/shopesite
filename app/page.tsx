@@ -17,6 +17,8 @@ const HomePage: React.FC = () => {
 
       {/* Group 114 */}
 
+
+    
       <div className=" absolute top-0   2xl:w-[643px] 2xl:h-[443px] bg-[rgb(255,243,227)] right-0 mt-[300px] lg:mr-24 md:mr-9">
         <div className=" space-y-6 p-9 flex-col place-content-center ">
           <p className=" font-bold tracking-widest text-base ">New Arrival</p>
@@ -32,8 +34,10 @@ const HomePage: React.FC = () => {
             <Link className="px-14 py-5 bg-[#B88E2F] font-bold tracking-widest text-base text-white  " href={"/Shop"}>
               BUY NOW
             </Link>
+           
           </div>
         </div>
+        
       </div>
       <div className=" relative text-center my-14 mx-40 h-[695]">
         <p className="font-bold text-black text-2xl tracking-widest ">
